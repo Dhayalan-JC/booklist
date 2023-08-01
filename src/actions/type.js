@@ -1,0 +1,4 @@
+//BOOK_RESULT
+export const LIST_DETAILS = "LIST_DETAILS";
+export const EDIT_DETAILS = "EDIT_DETAILS";
+export const UPDATE_DETAILS = "UPDATE_DETAILS";
