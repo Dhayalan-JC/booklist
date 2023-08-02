@@ -1,13 +1,13 @@
 import { API_START, API_END, ACCESS_DENIED, API_ERROR } from '../actions/type';
 
-export const apiStart = (label) => ({
+export const apiStart = (data) => ({
   type: API_START,
-  payload: label,
+  payload: data,
 });
 
-export const apiEnd = (label) => ({
+export const apiEnd = (data) => ({
   type: API_END,
-  payload: label,
+  payload: data,
 });
 
 export const accessDenied = (url) => ({

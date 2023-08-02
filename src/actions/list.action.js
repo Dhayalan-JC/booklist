@@ -1,5 +1,5 @@
 import {
-  SET_ARTICLE_DETAILS,
+  // SET_ARTICLE_DETAILS,
   LIST_DETAILS,
   API,
   EDIT_DETAILS,
@@ -19,14 +19,14 @@ export const update_data = (value) => ({
 export function loadData() {
   return apiAction({
     url: 'http://68.178.162.203:8080/application-test-v1.1/books',
-    onSuccess: setArticleDetails,
+    onSuccess: detailList,
     onFailure: () => console.log('Error occured loading articles'),
     label: LIST_DETAILS,
   });
 }
-function setArticleDetails(data) {
+function detailList(data) {
   return {
-    type: SET_ARTICLE_DETAILS,
+    type: LIST_DETAILS,
     payload: data,
   };
 }
