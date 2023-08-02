@@ -11,26 +11,19 @@ const apiMiddleware =
 
     if (action.type !== API) return;
 
-    const {
-      url,
-      method,
-      data,
-      accessToken,
-      onSuccess,
-      onFailure,
-      label,
-      headers,
-    } = action.payload;
+    const { url, method, data, accessToken, onSuccess, onFailure } =
+      action.payload;
     const dataOrParams = ['GET', 'DELETE'].includes(method) ? 'params' : 'data';
 
     // axios default configs
     axios.defaults.baseURL = process.env.REACT_APP_BASE_URL || '';
     axios.defaults.headers.common['Content-Type'] = 'application/json';
     axios.defaults.headers.common['Authorization'] = `Bearer ${accessToken}`;
+    axios.defaults.headers.post['Access-Control-Allow-Origin'] = '*';
 
-    if (label) {
-      dispatch(apiStart(label));
-    }
+    // if (label) {
+    //   dispatch(apiStart(label));
+    // }
     if (data) {
       dispatch(apiStart(data));
     }
@@ -39,7 +32,6 @@ const apiMiddleware =
       .request({
         url,
         method,
-        headers,
         [dataOrParams]: data,
       })
       .then(({ data }) => {
@@ -54,9 +46,9 @@ const apiMiddleware =
         }
       })
       .finally(() => {
-        if (label) {
-          dispatch(apiEnd(label));
-        }
+        // if (label) {
+        //   dispatch(apiEnd(label));
+        // }
         if (data) {
           dispatch(apiEnd(data));
         }

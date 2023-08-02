@@ -21,7 +21,6 @@ export function loadData() {
     url: 'http://68.178.162.203:8080/application-test-v1.1/books',
     onSuccess: detailList,
     onFailure: () => console.log('Error occured loading articles'),
-    label: LIST_DETAILS,
   });
 }
 function detailList(data) {
@@ -38,8 +37,8 @@ function apiAction({
   accessToken = null,
   onSuccess = () => {},
   onFailure = () => {},
-  label = '',
-  headersOverride = null,
+  // label = '',
+  // headersOverride = null,
 }) {
   return {
     type: API,
@@ -50,8 +49,8 @@ function apiAction({
       accessToken,
       onSuccess,
       onFailure,
-      label,
-      headersOverride,
+      // label,
+      // headersOverride,
     },
   };
 }

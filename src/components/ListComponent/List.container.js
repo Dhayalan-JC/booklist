@@ -14,16 +14,15 @@ class ListComponent extends Component {
   componentDidMount() {
     this.props.loadData();
   }
+
   render() {
-    const date = new Date();
-    // const users = [{ name: 'users', age: 21 }];
-    // console.log('PROPS ME :::', this.props.lists.data);
-    // console.log('STATE ME :::', this.state.lists);
-    // const { author, country, language, link, pages, title, year, id } =
-    const list = this.props.lists.data;
-    // this.setState = list;
+    // const date = new Date();
+    this.list = this.props.lists.data;
     return (
-      <ListComponentContent list={list} date={date.toLocaleDateString()} />
+      <ListComponentContent
+        list={this.props.lists.data}
+        // date={date.toLocaleDateString()}
+      />
     );
   }
 }
