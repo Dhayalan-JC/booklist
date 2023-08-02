@@ -40,14 +40,14 @@ class ListComponent extends Component {
             <input className="form-control" type="text" />
           </Col>
         </Row>
-        <Row className="padd-4">
+        <Row class="pa-5">
           {/* {users.map((u) => (
             <React.Fragment key={u.id}>
               <h6>{u.name}</h6>
             </React.Fragment>
           ))} */}
           {lists.map((u) => (
-            <Col sm={4}>
+            <Col sm={3}>
               <React.Fragment key={u.id}>
                 <h6>{u.title}</h6>
                 {/* <h6>{u.author}</h6> */}
