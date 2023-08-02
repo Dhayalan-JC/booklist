@@ -9,13 +9,14 @@ export const ListComponentContent = (props) => {
   return (
     <Container>
       <Row>
-        <Col sm={8} className="text-center">
+        <Col sm={11} className="text-center">
           <span className="d-block text-right">Today : {props.date}</span>
           <h1>Book List</h1>
         </Col>
+        <Col sm={1}></Col>
       </Row>
       <Row>
-        <Col sm={4} className="text-center">
+        <Col className="text-center">
           <input className="form-control" type="text" />
         </Col>
       </Row>
