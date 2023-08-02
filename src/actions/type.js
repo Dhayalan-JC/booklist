@@ -11,3 +11,6 @@ export const API_START = 'API_START';
 export const API_END = 'API_END';
 export const ACCESS_DENIED = 'ACCESS_DENIED';
 export const API_ERROR = 'API_ERROR';
+
+export const GET_USERS = 'GET_USERS';
+export const USERS_ERROR = 'USERS_ERROR';
