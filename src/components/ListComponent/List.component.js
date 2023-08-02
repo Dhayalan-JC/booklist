@@ -9,11 +9,12 @@ export const ListComponentContent = (props) => {
   return (
     <Container>
       <Row>
-        <Col sm={11} className="text-center">
-          <span className="d-block text-right">Today : {props.date}</span>
-          <h1>Book List</h1>
+        <Col sm={10} className="text-center">
+          <h1 style={{ padding: '0 0 0 12rem' }}>Book List</h1>
         </Col>
-        <Col sm={1}></Col>
+        <Col sm={2}>
+          <span className="d-block text-right">Today : {props.date}</span>
+        </Col>
       </Row>
       <Row>
         <Col className="text-center">
