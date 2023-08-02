@@ -13,7 +13,7 @@ class App extends Component {
         <Route
           render={() => (
             <>
-              <Route exact path="/" component={ListComponent} replace={true} />
+              <Route exact path="/" component={ListComponent} />
               <Redirect to="/" />
             </>
           )}

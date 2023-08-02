@@ -7,6 +7,7 @@ import {
 } from '../actions/type';
 
 const INITIAL_STATE = {
+  lists: [],
   isloading: true,
 };
 
@@ -16,6 +17,7 @@ export default (state = INITIAL_STATE, action) => {
     case LIST_DETAILS:
       // console.log('ACTION type => ', action.type);
       // console.log('PAYLOAD DATA => ', action.payload);
+      // return Object.assign({}, state, { lists: action.lists });
       return { ...state, data: action.payload, isloading: false };
     case API_START:
       if (action.payload === LIST_DETAILS) {
