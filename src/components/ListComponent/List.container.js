@@ -3,7 +3,7 @@ import { connect } from 'react-redux';
 import { withRouter } from 'react-router-dom';
 import { Container, Row, Col } from 'react-bootstrap';
 // import { ListComponentContent } from './List.component';
-import { loadData, getData } from './../../actions';
+import { loadData } from './../../actions';
 
 class ListComponent extends Component {
   constructor(props) {
@@ -15,7 +15,7 @@ class ListComponent extends Component {
   }
   componentDidMount() {
     this.props.loadData();
-    this.props.getData();
+    // this.props.getData();
   }
 
   render() {
@@ -68,7 +68,7 @@ const mapStateToProp = (state) => {
 
 const mapDispatchToProps = {
   loadData,
-  getData,
+  // getData,
 };
 
 export default connect(
