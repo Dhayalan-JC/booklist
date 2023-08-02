@@ -1,11 +1,6 @@
-import React, { Component } from "react";
-import {
-  BrowserRouter as Router,
-  Route,
-  Redirect,
-  Switch,
-} from "react-router-dom";
-import { ListComponent } from "./components";
+import React, { Component } from 'react';
+import { BrowserRouter as Router, Route, Redirect } from 'react-router-dom';
+import { ListComponent } from './components';
 
 class App extends Component {
   constructor(props) {
@@ -16,11 +11,11 @@ class App extends Component {
     return (
       <Router>
         <Route
-          render={({ location }) => (
-            <Switch location={location}>
-              <Route exact path="/" component={ListComponent} />
+          render={() => (
+            <>
+              <Route exact path="/" component={ListComponent} replace={true} />
               <Redirect to="/" />
-            </Switch>
+            </>
           )}
         />
       </Router>

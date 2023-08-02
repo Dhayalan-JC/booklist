@@ -1,28 +1,30 @@
-import React, { Component } from "react";
-import { connect } from "react-redux";
-import { withRouter } from "react-router-dom";
-import { LisComponentContent } from "./List.component";
-import { loadData } from "./../../actions";
+import React, { Component } from 'react';
+import { connect } from 'react-redux';
+import { withRouter } from 'react-router-dom';
+import { ListComponentContent } from './List.component';
+// import { loadData } from './../../actions';
 
 class ListComponent extends Component {
   constructor(props) {
     super(props);
     this.State = {};
   }
+  componentDidMount() {
+    // this.props.loadData();
+  }
   render() {
-    return <LisComponentContent />;
+    return <ListComponentContent />;
   }
 }
-const mapStateToProp = ({ data }) => {
-  const { list, isloading } = data;
+const mapStateToProp = ({ data = {}, isloading = false }) => {
   return {
-    list,
+    data,
     isloading,
   };
 };
 
 const mapDispatchToProps = {
-  loadData,
+  // loadData,
 };
 
 export default connect(

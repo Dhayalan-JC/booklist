@@ -1,9 +1,14 @@
-import React from "react";
+import React from 'react';
 
-export const ListComponentContent = (props) => {
+export const ListComponentContent = () => {
   return (
-    <>
-      <section>Book List</section>
-    </>
+    <div>
+      <section>
+        <h1>Book List</h1>
+        <div>
+          <input type="text" />
+        </div>
+      </section>
+    </div>
   );
 };
