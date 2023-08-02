@@ -1,6 +1,6 @@
 [[redirects]]
-  from = "/<path-to-access-cors-url>"
-  to = "<cross-origin-url>"
+  from = "/application-test-v1.1"
+  to = "http://68.178.162.203:8080/"
   status = 200
   force = true
   headers = {X-From = "Netlify"}
