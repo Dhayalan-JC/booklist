@@ -1,8 +1,8 @@
-import { combineReducers } from 'redux';
-import listreducer from './list.reducer';
-import userReducer from './user.reducer';
+import { combineReducers } from "redux";
+import listReducer from "./list.reducer";
+import userReducer from "./user.reducer";
 
 export default combineReducers({
-  lists: listreducer,
+  lists: listReducer,
   users: userReducer,
 });

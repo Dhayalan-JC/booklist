@@ -1,5 +1,5 @@
 // @import '~bootstrap/scss/bootstrap';
-@import 'bootstrap/dist/css/bootstrap.css';
+@import "bootstrap/dist/css/bootstrap.css";
 
 :root {
   --primary-color: rgba(13, 110, 139, 0.75);
@@ -27,4 +27,11 @@ body {
   -moz-osx-font-smoothing: subpixel-antialiased;
   -webkit-font-smoothing: subpixel-antialiased;
   // overflow-x: hidden;
+}
+.single_book {
+  margin: 0.5em;
+  background-color: #a10101;
+  color: white;
+  padding: 0.5rem 1rem;
+  border-radius: 10px;
 }

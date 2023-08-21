@@ -1,5 +1,5 @@
 /* eslint-disable import/no-anonymous-default-export */
-import { LIST_DETAILS } from '../actions/type';
+import { LIST_DETAILS } from "../actions/type";
 
 const INITIAL_STATE = {
   lists: [],
