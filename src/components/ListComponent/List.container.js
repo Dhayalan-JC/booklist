@@ -7,10 +7,10 @@ import {
   Col,
   Table,
   Pagination,
-  Button,
+  // Button,
 } from "react-bootstrap";
 // import { ListComponentContent } from './List.component';
-import { loadData, getData } from "./../../actions";
+import { getData } from "./../../actions";
 
 class ListComponent extends Component {
   constructor(props) {
@@ -18,12 +18,12 @@ class ListComponent extends Component {
     this.state = {
       searchText: "",
       users: [],
-      lists: [],
+      // lists: [],
       isEditable: false,
     };
   }
   componentDidMount() {
-    this.props.loadData();
+    // this.props.loadData();
     this.props.getData();
   }
   onTextChange = (e) => {
@@ -35,11 +35,11 @@ class ListComponent extends Component {
     if (val === "") {
       console.log("IF ::", this.searchText);
 
-      this.setState({ lists: [] });
+      this.setState({ users: [] });
     } else {
       console.log("ELSE ::", this.searchText);
-      console.log("LISTSS", this.props.lists.lists);
-      let data = this.props.lists.lists;
+      console.log("LISTSS", this.props.users);
+      let data = this.props.lists.users;
       let filteredUsers = [];
       for (let i = 0; i < data.length; i++) {
         if (data[i].title === val) {
@@ -47,7 +47,7 @@ class ListComponent extends Component {
         }
       }
       // console.log(filteredUsers);
-      this.lists = filteredUsers;
+      this.users = filteredUsers;
     }
   };
 
@@ -59,9 +59,10 @@ class ListComponent extends Component {
   };
   render() {
     // const date = new Date();
-    // this.list = this.props.lists.data;
-    const { lists } = this.props.lists;
-    let active = 1;
+    // const { lists } = this.props.lists;
+    const { users } = this.props.users;
+    // const length = users.length;
+    let active = 0;
     let items = [];
     for (let number = 1; number <= 5; number++) {
       items.push(
@@ -91,12 +92,11 @@ class ListComponent extends Component {
           </Col>
         </Row>
         <Row className="pa-5 d-flex justify-space-evenly">
-          {/* {users.map((u) => (
+          {users.map((u) => (
             <React.Fragment key={u.id}>
               <h6>{u.name}</h6>
             </React.Fragment>
-          ))} */}
-          {/* {this.state.lists.length} */}
+          ))}
 
           <Table responsive striped="columns" bordered hover>
             <thead>
@@ -110,7 +110,7 @@ class ListComponent extends Component {
                 <th>User Action</th>
               </tr>
             </thead>
-            {this.state.searchText === "" ? (
+            {/* {this.state.searchText === "" ? (
               <tbody>
                 {lists.map((u) => (
                   <tr key={u.id}>
@@ -133,12 +133,11 @@ class ListComponent extends Component {
               </tbody>
             ) : (
               "No Data Found"
-            )}
+            )} */}
           </Table>
 
           <Pagination>{items}</Pagination>
-          <br />
-          <Pagination>{lists.item}</Pagination>
+          {/* <Pagination>{lists.item}</Pagination> */}
         </Row>
       </Container>
     );
@@ -146,13 +145,13 @@ class ListComponent extends Component {
 }
 const mapStateToProp = (state) => {
   return {
-    lists: state.lists,
+    // lists: state.lists,
     users: state.users,
   };
 };
 
 const mapDispatchToProps = {
-  loadData,
+  // loadData,
   getData,
 };
 
